@@ -15,3 +15,7 @@ class FileStorage:
     def new(self, obj):
         FileName = (type(obj).__name__ + "." + obj.id)
         self.__objects[FileName] = obj
+
+    def save(self):
+        my_dict = {}
+        

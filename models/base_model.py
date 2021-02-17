@@ -35,6 +35,8 @@ class BaseModel:
             elif k == "updated_at":
                 my_dict[k] = self.updated_at.isoformat()
             
+        my_dict["__class__"] = type(self)
+
         return my_dict
 
     
