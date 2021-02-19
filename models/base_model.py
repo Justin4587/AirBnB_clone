@@ -2,7 +2,7 @@
 """Class base"""
 import uuid
 from datetime import datetime
-
+import models
 
 class BaseModel:
     """still base modeling is that a word"""
@@ -43,7 +43,9 @@ class BaseModel:
     def __str__(self):
         """ str rep of object """
         return "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
-    
+
     def save(self):
         """updates"""
         self.updated_at = datetime.now()
+        models.storage.new(self)
+        models.storage.save()
