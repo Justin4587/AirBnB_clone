@@ -2,7 +2,7 @@
 """I hate typing comments"""
 import json
 import models
-from models import BaseModel
+
 
 
 class FileStorage:

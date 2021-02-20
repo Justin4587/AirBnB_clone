@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-""" blahdee blah blah doc string"""
-
-
-from models.engine.file_storage import FileStorage
-
-storage = FileStorage()
+import models.engine.file_storage 
+storage = models.engine.file_storage.FileStorage()
 storage.reload()
