@@ -4,10 +4,11 @@ import json
 from models.base_model import BaseModel
 
 class FileStorage:
-    """neet im doing it again"""
+    """neet im doing iwhat the FUCK have I donet again"""
 
     __file_path = "file.json"
     __objects = {}
+
 
     def all(self):
         return self.__objects
@@ -19,7 +20,7 @@ class FileStorage:
     def save(self):
         my_dict = {}
         for k in FileStorage.__objects:
-            my_dict[k] = FileStorage.__objects
+            my_dict[k] = FileStorage.__objects[k].to_dict()
         with open(self.__file_path, mode="w+") as F:
             json.dump(my_dict, F)
 
