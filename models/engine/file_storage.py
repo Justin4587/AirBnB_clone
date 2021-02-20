@@ -4,12 +4,12 @@ import json
 import models
 from models import BaseModel
 
+
 class FileStorage:
     """neet im doing iwhat the FUCK have I donet again"""
 
     __file_path = "file.json"
     __objects = {}
-
 
     def all(self):
         return self.__objects
@@ -25,11 +25,10 @@ class FileStorage:
         with open(self.__file_path, mode="w+") as F:
             json.dump(my_dict, F)
 
-
     def reload(self):
         try:
             with open(self.__file_path, mode="r") as F:
                 my_dict = json.load(F)
-        
+
         except FileNotFoundError:
             pass

@@ -12,14 +12,18 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """If it is its not spelt right ??? spelt"""
 
-        if kwargs != None and len(kwargs) != 0:
+        if kwargs is not None and len(kwargs) != 0:
             for k in kwargs:
                 if k == "id":
                     self.id = kwargs[k]
                 elif k == "created_at":
-                    self.created_at = datetime.strptime(kwargs[k], "%Y-%m-%dT%H:%M:%S.%f")
+                    self.created_at = datetime.strptime(
+                        kwargs[k],
+                        "%Y-%m-%dT%H:%M:%S.%f")
                 elif k == "updated_at":
-                    self.updated_at = datetime.strptime(kwargs[k], "%Y-%m-%dT%H:%M:%S.%f")
+                    self.updated_at = datetime.strptime(
+                        kwargs[k],
+                        "%Y-%m-%dT%H:%M:%S.%f")
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -36,18 +40,19 @@ class BaseModel:
                 my_dict[k] = self.created_at.isoformat()
             elif k == "updated_at":
                 my_dict[k] = self.updated_at.isoformat()
-        
+
         my_dict["__class__"] = self.__class__.__name__
 
         return my_dict
 
-    
     def __str__(self):
         """ str rep of object """
-        return "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(
+            type(self).__name__,
+            self.id, self.__dict__)
 
     def save(self):
         """updates"""
         self.updated_at = datetime.now()
         # models.storage.new(self)
-        # models.storage.save()
+        models.storage.save()
