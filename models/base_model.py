@@ -24,7 +24,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-    
+
     def to_dict(self):
         """ something something darkside"""
         my_dict = dict(self.__dict__).copy()
@@ -49,5 +49,5 @@ class BaseModel:
     def save(self):
         """updates"""
         self.updated_at = datetime.now()
-        models.storage.new(self)
-        models.storage.save()
+        # models.storage.new(self)
+        # models.storage.save()

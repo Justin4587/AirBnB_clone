@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """I hate typing comments"""
 import json
-from models.base_model import BaseModel
+import models
+from models import BaseModel
 
 class FileStorage:
     """neet im doing iwhat the FUCK have I donet again"""
@@ -14,8 +15,8 @@ class FileStorage:
         return self.__objects
 
     def new(self, obj):
-        FileName = (type(obj).__name__ + "." + obj.id)
-        self.__objects[FileName] = obj
+        F = (type(obj).__name__ + "." + obj.id)
+        self.__objects[F] = obj
 
     def save(self):
         my_dict = {}
