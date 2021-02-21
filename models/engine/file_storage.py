@@ -2,8 +2,6 @@
 """I hate typing comments"""
 import json
 import models
-from models.base_model import BaseModel
-from models.user import User
 import os.path
 
 
