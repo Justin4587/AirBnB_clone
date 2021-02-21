@@ -3,7 +3,12 @@
 import cmd
 from sys import argv
 import models
-
+from models.user import User
+from models.city import City
+from models.state import State
+from models.review import Review
+from models.place import Place
+from models.amenity import Amenity
 
 class HBNBCommand(cmd.Cmd):
     """I guess I'm doing things"""
