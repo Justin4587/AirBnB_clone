@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is for the console"""
 import cmd
+from sys import argv
 import models
 
 
