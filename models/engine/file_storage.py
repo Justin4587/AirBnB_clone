@@ -2,7 +2,7 @@
 """I hate typing comments"""
 import json
 import models
-
+import os.path
 
 
 class FileStorage:
@@ -26,9 +26,12 @@ class FileStorage:
             json.dump(my_dict, F)
 
     def reload(self):
-        try:
+        my_dict = {}
+
+        if os.path.isfile(self.__file_path):
             with open(self.__file_path, mode="r") as F:
                 my_dict = json.load(F)
-
-        except FileNotFoundError:
-            pass
+                for k in my_dict:
+                    i = my_dict[k]["__class__"]
+                    j = models.master_dict[i]
+                    self.__objects[k] = j(**my_dict[k])

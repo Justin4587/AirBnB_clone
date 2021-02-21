@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is for the console"""
 import cmd
+import models
 
 
 class HBNBCommand(cmd.Cmd):

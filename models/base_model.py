@@ -24,6 +24,8 @@ class BaseModel:
                     self.updated_at = datetime.strptime(
                         kwargs[k],
                         "%Y-%m-%dT%H:%M:%S.%f")
+                else:
+                    self.__dict__[k] = kwargs[k]
 
         else:
             self.id = str(uuid.uuid4())
@@ -32,7 +34,7 @@ class BaseModel:
 
     def to_dict(self):
         """ something something darkside"""
-        my_dict = dict(self.__dict__).copy()
+        my_dict = self.__dict__.copy()
 
         for k in my_dict:
             if k == "id":
