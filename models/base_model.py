@@ -4,7 +4,12 @@ import uuid
 from datetime import datetime
 import models
 import json
-
+from models.user import User
+from models.city import City
+from models.state import State
+from models.review import Review
+from models.place import Place
+from models.amenity import Amenity
 
 class BaseModel:
     """still base modeling is that a word"""
