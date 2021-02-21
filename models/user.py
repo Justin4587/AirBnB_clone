@@ -2,6 +2,7 @@
 """ user and other random words unicycle, hedgefund, spaghetification"""
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     email = ""
     password = ""
