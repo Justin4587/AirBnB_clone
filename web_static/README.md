@@ -1,0 +1,1 @@
+This is a readme for the web_static portion of AirBNB which has oficially kicked my ass. Lets see if the little seahorse wants to rub my nose in it?
