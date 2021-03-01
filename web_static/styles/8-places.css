@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    justify-items: center;
     justify-content: center;
 }
 h1 {
@@ -14,10 +15,8 @@ article {
     margin: 20px;
     border: #ff5a5f solid 1px;
     border-radius: 4px;
-    display: flex;
     text-align: center;
     justify-content: center;
-    
 }
 h2 {
     font-size: 30px;
