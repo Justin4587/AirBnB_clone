@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""TEST FOR BASE"""
+
 from models import storage
 from models.base_model import BaseModel
 
